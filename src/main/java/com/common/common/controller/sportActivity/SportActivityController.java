@@ -17,7 +17,7 @@ public class SportActivityController {
     @Autowired
     SportActivityService sportActivityService;
 
-    @RequestMapping(value="/", method = RequestMethod.POST, produces = {"application/json"})
+    @RequestMapping(value="/getAllSportActivities", method = RequestMethod.POST, produces = {"application/json"})
     public BaseDto get(@RequestBody SportActivityFilterRequest sportActivityFilterRequest) {
         return this.sportActivityService.getAllSportActivities(sportActivityFilterRequest);
     }

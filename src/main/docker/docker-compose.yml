@@ -14,3 +14,5 @@ services:
       - POSTGRES_PASSWORD=common
       - POSTGRES_USER=common
       - POSTGRES_DB=common
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
