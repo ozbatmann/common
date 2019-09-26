@@ -37,7 +37,7 @@ public class SportActivityService {
 
         try {
 
-            List<SportActivity> sportActivityList  = this.sportActivityDao.findFilteredSportActivities(sportActivityFilterRequest.getLat(), sportActivityFilterRequest.getLon(),sportActivityFilterRequest.getMaxAge(),sportActivityFilterRequest.getMinAge(),sportActivityFilterRequest.getStartDates(),sportActivityFilterRequest.getPricingType(), sportActivityFilterRequest.getActivityType());
+            List<SportActivity> sportActivityList  = this.sportActivityDao.findFilteredSportActivities(sportActivityFilterRequest.getLat(), sportActivityFilterRequest.getLon(),sportActivityFilterRequest.getMaxAge(),sportActivityFilterRequest.getMinAge(),sportActivityFilterRequest.getStartDates(), sportActivityFilterRequest.getPricingTypes(), sportActivityFilterRequest.getActivityTypes());
 
             baseDto = new ListDto<>(sportActivityList);
             baseDto.setMessage("All Sport Activities Successfully Listed");

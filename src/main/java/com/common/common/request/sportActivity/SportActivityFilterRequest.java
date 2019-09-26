@@ -18,9 +18,8 @@ public class SportActivityFilterRequest {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "yyyy/MM/dd HH:mm:ss", timezone = "Europe/Minsk")
     private List<Date> startDates;
 
-    private double price;
-    private ActivityType activityType;
-    private PricingType pricingType;
+    private List<ActivityType> activityTypes;
+    private List<PricingType> pricingTypes;
 
 
     public double getMinAge() {
@@ -71,27 +70,19 @@ public class SportActivityFilterRequest {
         this.startDates = startDates;
     }
 
-    public double getPrice() {
-        return price;
+    public List<ActivityType> getActivityTypes() {
+        return activityTypes;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setActivityTypes(List<ActivityType> activityTypes) {
+        this.activityTypes = activityTypes;
     }
 
-    public ActivityType getActivityType() {
-        return activityType;
+    public List<PricingType> getPricingTypes() {
+        return pricingTypes;
     }
 
-    public void setActivityType(ActivityType activityType) {
-        this.activityType = activityType;
-    }
-
-    public PricingType getPricingType() {
-        return pricingType;
-    }
-
-    public void setPricingType(PricingType pricingType) {
-        this.pricingType = pricingType;
+    public void setPricingTypes(List<PricingType> pricingTypes) {
+        this.pricingTypes = pricingTypes;
     }
 }
