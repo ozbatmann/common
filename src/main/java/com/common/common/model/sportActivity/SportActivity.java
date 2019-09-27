@@ -24,7 +24,7 @@ public class SportActivity {
     private UUID id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "type", nullable = false)
+    @Column(name = "activityType", nullable = false)
     private ActivityType activityType;
 
     @Enumerated(EnumType.STRING)

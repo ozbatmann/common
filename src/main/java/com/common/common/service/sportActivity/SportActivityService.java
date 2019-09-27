@@ -36,6 +36,8 @@ public class SportActivityService {
         BaseDto baseDto;
 
         try {
+            System.out.println(sportActivityFilterRequest.getActivityTypes());
+            System.out.println(sportActivityFilterRequest.getPricingTypes());
 
             List<SportActivity> sportActivityList  = this.sportActivityDao.findFilteredSportActivities(sportActivityFilterRequest.getLat(), sportActivityFilterRequest.getLon(),sportActivityFilterRequest.getMaxAge(),sportActivityFilterRequest.getMinAge(),sportActivityFilterRequest.getStartDates(), sportActivityFilterRequest.getPricingTypes(), sportActivityFilterRequest.getActivityTypes());
 
