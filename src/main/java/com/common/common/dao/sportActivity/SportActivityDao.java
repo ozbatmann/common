@@ -1,5 +1,7 @@
 package com.common.common.dao.sportActivity;
 
+import com.common.common.enums.ActivityType;
+import com.common.common.enums.PricingType;
 import com.common.common.model.sportActivity.SportActivity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,9 +17,11 @@ public interface SportActivityDao extends JpaRepository<SportActivity, Serializa
     @Query("SELECT sprtacts FROM SportActivity AS sprtacts WHERE " +
             "sprtacts.ageRangeMax <= :maxAge AND " +
             "sprtacts.ageRangeMin >= :minAge AND " +
+            "sprtacts.activityType IN :activityTypes AND " +
+            "sprtacts.pricingType IN :pricingTypes AND " +
             "sprtacts.lat <= :lat AND " +
             "sprtacts.lon <= :lon")
-    List<SportActivity> findFilteredSportActivities(float lat, float lon, double maxAge, double minAge);
+    List<SportActivity> findFilteredSportActivities(float lat, float lon, double maxAge, double minAge,List<PricingType> pricingTypes, List<ActivityType> activityTypes);
 
 
     List<SportActivity> findAll();

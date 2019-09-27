@@ -39,7 +39,7 @@ public class SportActivityService {
             System.out.println(sportActivityFilterRequest.getActivityTypes());
             System.out.println(sportActivityFilterRequest.getPricingTypes());
 
-            List<SportActivity> sportActivityList  = this.sportActivityDao.findFilteredSportActivities(sportActivityFilterRequest.getLat(), sportActivityFilterRequest.getLon(),sportActivityFilterRequest.getMaxAge(),sportActivityFilterRequest.getMinAge());
+            List<SportActivity> sportActivityList  = this.sportActivityDao.findFilteredSportActivities(sportActivityFilterRequest.getLat(), sportActivityFilterRequest.getLon(),sportActivityFilterRequest.getMaxAge(),sportActivityFilterRequest.getMinAge(),sportActivityFilterRequest.getPricingTypes(), sportActivityFilterRequest.getActivityTypes());
 
             baseDto = new ListDto<>(sportActivityList);
             baseDto.setMessage("All Sport Activities Successfully Listed");
