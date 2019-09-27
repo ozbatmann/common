@@ -47,7 +47,7 @@ public class SportActivity {
     @Column(name = "lat",nullable = false)
     private float lat;
 
-    @Column(name = "long",nullable = false)
+    @Column(name = "lon",nullable = false)
     private float lon;
 
     @Column(name = "ageRangeMin",nullable = false)
