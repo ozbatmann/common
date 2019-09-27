@@ -15,12 +15,9 @@ public interface SportActivityDao extends JpaRepository<SportActivity, Serializa
     @Query("SELECT sprtacts FROM SportActivity AS sprtacts WHERE " +
             "sprtacts.ageRangeMax <= :maxAge AND " +
             "sprtacts.ageRangeMin >= :minAge AND " +
-            "sprtacts.activityType IN :activityTypes AND " +
-            "sprtacts.pricingType IN :pricingTypes AND " +
-            "sprtacts.startDate IN :dates AND " +
             "sprtacts.lat <= :lat AND " +
             "sprtacts.lon <= :lon")
-    List<SportActivity> findFilteredSportActivities(float lat, float lon, double maxAge, double minAge, List dates);
+    List<SportActivity> findFilteredSportActivities(float lat, float lon, double maxAge, double minAge);
 
 
     List<SportActivity> findAll();
